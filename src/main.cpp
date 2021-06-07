@@ -4,9 +4,12 @@ int main(){
     TimeSeries tSeries;
     tSeries.showMainTable();        // a)
     tSeries.showTrendEquation();    // b)
-    tSeries.calculateMovingAvg();   // c)
-    tSeries.calculateSeasonalIndices();
-    tSeries.calculateSeasonalRatios(); // end of c)
+    tSeries.calculateUncenteredCenteredValues();   // c)
+    tSeries.calculateMovingAvgs();
+    tSeries.calculateSeasonalRatios(); 
+    tSeries.calculateMedIndices();
+    tSeries.calculateAdjustedSeasonalIndices();    // end of c)
+    tSeries.calculateDeSeasonalizedVals();
     tSeries.calculateTrend();
     
     return 0;

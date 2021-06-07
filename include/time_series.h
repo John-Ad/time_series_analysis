@@ -1,4 +1,5 @@
 #include "include.h"
+#include "quicksort.h"
 
 class TimeSeries{
     private:
@@ -13,12 +14,14 @@ class TimeSeries{
         double xyTotal;
 
         double* adjustmentFactors;
-        double* x4MovingAvgs;
-        double* x2MovingAvgs;
+        double* x4values;
+        double* x2values;
 
-        double* seasonalIndices;
+        double* movingAvgs;
         double* seasonalRatios;
         double* medSeasonalIndices;
+        double* adjustedSeasonalIndices;
+        double* deSeasonalizedY;
 
         double gradient;
         double yIntercept;
@@ -33,7 +36,10 @@ class TimeSeries{
         void showMainTable();
         void calculateTrend();
         void showTrendEquation();
-        void calculateMovingAvg();
-        void calculateSeasonalIndices();
+        void calculateUncenteredCenteredValues();
+        void calculateMovingAvgs();
         void calculateSeasonalRatios();
+        void calculateMedIndices();
+        void calculateAdjustedSeasonalIndices();
+        void calculateDeSeasonalizedVals();
 };
